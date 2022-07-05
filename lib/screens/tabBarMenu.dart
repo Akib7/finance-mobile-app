@@ -2,6 +2,7 @@
 import 'dart:io';
 
 import 'package:finance_mobile_app/UserProfile/Utils/userPreferences.dart';
+import 'package:finance_mobile_app/providers/user_provider.dart';
 import 'package:finance_mobile_app/widgets/SignUp.dart';
 
 import 'package:finance_mobile_app/widgets/UserProfileWidgets/Textfield_widget.dart';
@@ -12,9 +13,8 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class TabBarMenu extends StatefulWidget {
-  const TabBarMenu({
-    Key? key,
-  }) : super(key: key);
+  late UserProvider userProvider;
+  TabBarMenu({Key? key, required this.userProvider}) : super(key: key);
 
   @override
   State<TabBarMenu> createState() => _TabBarMenuState();
@@ -121,6 +121,7 @@ class _TabBarMenuState extends State<TabBarMenu> {
 
   @override
   Widget build(BuildContext context) {
+    var userData = widget.userProvider.currentData;
     const color = login_color;
     return Stack(
       children: [
@@ -158,7 +159,7 @@ class _TabBarMenuState extends State<TabBarMenu> {
             ),
             TextFieldWidget(
               label: "Full Name",
-              text: user.name,
+              text: userData.userName,
               onClicked: (name) {},
             ),
             const SizedBox(
@@ -166,7 +167,7 @@ class _TabBarMenuState extends State<TabBarMenu> {
             ),
             TextFieldWidget(
               label: "Email",
-              text: user.email,
+              text: userData.email,
               onClicked: (email) {},
             ),
             const SizedBox(

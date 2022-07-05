@@ -2,12 +2,32 @@ import 'package:finance_mobile_app/Constants/firebase_auth_constants.dart';
 import 'package:finance_mobile_app/widgets/constants.dart';
 import 'package:finance_mobile_app/widgets/get_tab_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class MyMainMenu extends StatelessWidget {
-  const MyMainMenu({Key? key}) : super(key: key);
+import '../providers/user_provider.dart';
+
+class MyMainMenu extends StatefulWidget {
+  MyMainMenu({
+    Key? key,
+  }) : super(key: key);
 
   @override
+  State<MyMainMenu> createState() => _MyMainMenuState();
+}
+
+class _MyMainMenuState extends State<MyMainMenu> {
+  @override
+  @override
+  void initState() {
+    UserProvider userProvider = Provider.of(context, listen: false);
+    userProvider.getUserData();
+
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
+    UserProvider userProvider = Provider.of(context);
+    userProvider.getUserData();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -32,7 +52,9 @@ class MyMainMenu extends StatelessWidget {
           ),
         ],
       ),
-      body: const GetTabBar(),
+      body: GetTabBar(
+        userProvider: userProvider,
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:finance_mobile_app/providers/user_provider.dart';
 import 'package:finance_mobile_app/screens/landingPage1.dart';
 import 'package:finance_mobile_app/screens/tabBarMenu.dart';
 import 'package:finance_mobile_app/widgets/constants.dart';
@@ -9,7 +10,8 @@ import '../screens/money.dart';
 import '../screens/wallet.dart';
 
 class GetTabBar extends StatefulWidget {
-  const GetTabBar({Key? key}) : super(key: key);
+  late UserProvider userProvider;
+  GetTabBar({Key? key, required this.userProvider}) : super(key: key);
 
   @override
   _GetTabBarState createState() => _GetTabBarState();
@@ -60,7 +62,9 @@ class _GetTabBarState extends State<GetTabBar> {
 
   List<Widget> _buildScreens() {
     return [
-      const TabBarMenu(),
+      TabBarMenu(
+        userProvider: widget.userProvider,
+      ),
       const Wallet(),
       const Money(),
       const LandingPage1(),

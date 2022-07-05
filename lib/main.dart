@@ -1,8 +1,10 @@
 import 'package:finance_mobile_app/Controllers/auth_controller.dart';
+import 'package:finance_mobile_app/providers/user_provider.dart';
 import 'package:finance_mobile_app/widgets/MyHomePage.dart';
 import 'package:finance_mobile_app/widgets/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 import 'Constants/firebase_auth_constants.dart';
 
@@ -12,7 +14,11 @@ void main() async {
   await firebaseInitialization.then((value) {
     Get.put(AuthController());
   });
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (context) => UserProvider(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

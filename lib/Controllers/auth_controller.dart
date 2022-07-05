@@ -5,6 +5,7 @@ import 'package:finance_mobile_app/widgets/MyHomePage.dart';
 
 import 'package:finance_mobile_app/widgets/my_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
@@ -23,7 +24,7 @@ class AuthController extends GetxController {
     if (user == null) {
       Get.offAll(() => const MyHomePage());
     } else {
-      Get.offAll(() => const MyMainMenu());
+      Get.offAll(() => MyMainMenu());
     }
   }
 
