@@ -4,7 +4,10 @@ import 'package:finance_mobile_app/widgets/constants.dart';
 import 'package:finance_mobile_app/widgets/get_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../screens/credit_card_page_with_creditcard.dart';
+import 'credit_card_page.dart';
 import 'UserProfileWidgets/user_profile_widget.dart';
 import 'get_items.dart';
 
@@ -12,7 +15,7 @@ class GrabImages extends StatelessWidget {
   final user = UserPreference.myUser;
 
   // final imagePiece = ProfileWidget.
-   GrabImages({Key? key}) : super(key: key);
+  GrabImages({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +95,9 @@ class GrabImages extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Get.to(() => const CreditCardPageWithCreditCard());
+          },
           child: Padding(
             padding: const EdgeInsets.symmetric(
                 vertical: defaultPadding * 29.5, horizontal: 22),

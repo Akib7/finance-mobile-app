@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../providers/user_provider.dart';
 
 class MyMainMenu extends StatefulWidget {
-  MyMainMenu({
+  const MyMainMenu({
     Key? key,
   }) : super(key: key);
 
@@ -17,7 +17,6 @@ class MyMainMenu extends StatefulWidget {
 
 class _MyMainMenuState extends State<MyMainMenu> {
   @override
-  @override
   void initState() {
     UserProvider userProvider = Provider.of(context, listen: false);
     userProvider.getUserData();
@@ -25,6 +24,7 @@ class _MyMainMenuState extends State<MyMainMenu> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     UserProvider userProvider = Provider.of(context);
     userProvider.getUserData();
