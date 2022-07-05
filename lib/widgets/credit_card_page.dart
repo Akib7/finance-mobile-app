@@ -21,7 +21,7 @@ class CreditCardsPage extends StatelessWidget {
                   cardExpiration: "08/2022",
                   cardHolder: "HOUSSEM SELMI",
                   cardNumber: "3546 7532 XXXX 9742"),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               _buildCreditCard(

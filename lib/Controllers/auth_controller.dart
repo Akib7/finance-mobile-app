@@ -24,7 +24,7 @@ class AuthController extends GetxController {
     if (user == null) {
       Get.offAll(() => const MyHomePage());
     } else {
-      Get.offAll(() => MyMainMenu());
+      Get.offAll(() => const MyMainMenu());
     }
   }
 
