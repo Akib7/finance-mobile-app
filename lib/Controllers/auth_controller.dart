@@ -27,14 +27,14 @@ class AuthController extends GetxController {
     }
   }
 
-  void singup(String email, String password) async {
+  void singup(String email, String password, String userName) async {
     try {
       UserCredential result = await auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
       User? user = result.user;
-      await FireStoreDB.addUser(email, 0.0);
+      await FireStoreDB.addUser(email, userName);
     } catch (e) {
       print(e.toString());
     }

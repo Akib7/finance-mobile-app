@@ -20,6 +20,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   String name = "", email = "", phone = "";
   TextEditingController emailText = TextEditingController();
+  TextEditingController userNameController= TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
 
@@ -42,6 +43,7 @@ class _SignUpState extends State<SignUp> {
               Material(
                 color: signup_color,
                 child: TextFormField(
+                  controller: userNameController,
                   keyboardType: TextInputType.text,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -146,7 +148,7 @@ class _SignUpState extends State<SignUp> {
                       formkey.currentState!.validate()) {
                     print("Login Successful");
                     authController.singup(
-                        emailText.text.trim(), password.text.trim());
+                        emailText.text.trim(), password.text.trim(), userNameController.text.trim());
                   } else {
                     print("Login Unsuccessful");
                   }

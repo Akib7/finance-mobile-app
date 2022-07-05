@@ -13,65 +13,61 @@ class LandingPage1 extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: ListView(
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        children: [
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      Container(
-                        height: height / 4,
-                        width: width,
-                        decoration: const BoxDecoration(
-                          color: login_color,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(50),
-                              bottomRight: Radius.circular(50)),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
+      body: SingleChildScrollView(
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      height: height / 4,
+                      width: width,
+                      decoration: const BoxDecoration(
+                        color: login_color,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(50),
+                            bottomRight: Radius.circular(50)),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: const [
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 12, horizontal: 12),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: defaultPadding * 1.7),
+                            child: Row(
                               children: const [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 12, horizontal: 12),
+                                Text(
+                                  "Welcome Back!",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontFamily: 'OpenSans',
+                                  ),
                                 ),
                               ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: defaultPadding * 1.7),
-                              child: Row(
-                                children: const [
-                                  Text(
-                                    "Welcome Back!",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontFamily: 'OpenSans',
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                       GrabImages(),
-                    ],
-                  ),
-                  // const GrabImages(),
-                ],
-              ),
-            ],
-          ),
-        ],
+                    ),
+                     GrabImages(),
+                  ],
+                ),
+                // const GrabImages(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

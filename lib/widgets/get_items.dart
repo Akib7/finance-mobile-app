@@ -1,5 +1,5 @@
 import 'package:finance_mobile_app/screens/card_application_vertical.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import 'card_application.dart';
