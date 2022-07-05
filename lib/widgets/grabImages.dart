@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../screens/credit_card_page_with_creditcard.dart';
-import 'credit_card_page.dart';
+
 import 'UserProfileWidgets/user_profile_widget.dart';
 import 'get_items.dart';
 

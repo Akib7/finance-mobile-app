@@ -19,13 +19,13 @@ class _TopTabBarState extends State<TopTabBar> {
             children: <Widget>[
               ButtonsTabBar(
                 unselectedBackgroundColor: Colors.white,
-                unselectedLabelStyle: TextStyle(color: Colors.black),
-                labelStyle: TextStyle(
+                unselectedLabelStyle: const TextStyle(color: Colors.black),
+                labelStyle: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
-                tabs: [
+                tabs: const [
                   Tab(
                     text: "My Cards",
                   ),
@@ -37,7 +37,7 @@ class _TopTabBarState extends State<TopTabBar> {
                   ),
                 ],
               ),
-              Expanded(
+              const Expanded(
                 child: TabBarView(
                   children: <Widget>[
                     Center(

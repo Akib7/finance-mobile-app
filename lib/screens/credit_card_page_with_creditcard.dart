@@ -2,8 +2,6 @@ import 'package:finance_mobile_app/widgets/constants.dart';
 import 'package:finance_mobile_app/widgets/top_tab_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/credit_card_page.dart';
-
 class CreditCardPageWithCreditCard extends StatelessWidget {
   const CreditCardPageWithCreditCard({Key? key}) : super(key: key);
 
@@ -29,8 +27,8 @@ class CreditCardPageWithCreditCard extends StatelessWidget {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(50), topRight: Radius.circular(50)),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(18.0),
+            child: const Padding(
+              padding: EdgeInsets.all(18.0),
               child: TopTabBar(),
             ),
           ),
