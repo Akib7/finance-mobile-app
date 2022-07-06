@@ -16,19 +16,36 @@ class CreditCardsPage extends StatelessWidget {
               _buildTitleSection(
                   title: "Payment Details",
                   subTitle: "How would you like to pay ?"),
-              _buildCreditCard(
-                  color: login_color,
-                  cardExpiration: "08/2022",
-                  cardHolder: "HOUSSEM SELMI",
-                  cardNumber: "3546 7532 XXXX 9742"),
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 40.0),
+                    child: _buildCreditCard(
+                        color: login_color,
+                        cardExpiration: "08/2022",
+                        cardHolder: "HOUSSEM SELMI",
+                        cardNumber: "3546 7532 XXXX 9742",
+                        gradient1: login_color,
+                        gradient2: login_color),
+                  ),
+                  _buildCreditCard(
+                    color: signup_color,
+                    cardExpiration: "05/2024",
+                    cardHolder: "HOUSSEM SELMI",
+                    cardNumber: "9874 4785 XXXX 6548",
+                    gradient1: signup_color2,
+                    gradient2: Theme.of(context).scaffoldBackgroundColor,
+                  ),
+                ],
+              ),
               const SizedBox(
                 height: 15,
               ),
-              _buildCreditCard(
-                  color: signup_color,
-                  cardExpiration: "05/2024",
-                  cardHolder: "HOUSSEM SELMI",
-                  cardNumber: "9874 4785 XXXX 6548"),
+              // _buildCreditCard(
+              //     color: signup_color,
+              //     cardExpiration: "05/2024",
+              //     cardHolder: "HOUSSEM SELMI",
+              //     cardNumber: "9874 4785 XXXX 6548"),
               _buildAddCardButton(
                 icon: const Icon(Icons.add),
                 color: const Color(0xFF081603),
@@ -68,7 +85,9 @@ class CreditCardsPage extends StatelessWidget {
       {required Color color,
       required String cardNumber,
       required String cardHolder,
-      required String cardExpiration}) {
+      required String cardExpiration,
+      required Color gradient1,
+      required Color gradient2}) {
     return Card(
       elevation: 4.0,
       color: color,
@@ -78,6 +97,13 @@ class CreditCardsPage extends StatelessWidget {
       child: Container(
         height: 200,
         padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 22.0),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            gradient: LinearGradient(
+              colors: [gradient1, gradient2],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            )),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
