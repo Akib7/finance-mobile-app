@@ -1,5 +1,6 @@
 import 'package:finance_mobile_app/widgets/constants.dart';
 import 'package:finance_mobile_app/widgets/top_tab_bar.dart';
+
 import 'package:flutter/material.dart';
 
 class CreditCardPageWithCreditCard extends StatelessWidget {
@@ -22,9 +23,9 @@ class CreditCardPageWithCreditCard extends StatelessWidget {
           child: Container(
             width: width,
             height: height,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor,
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(50), topRight: Radius.circular(50)),
             ),
             child: const Padding(

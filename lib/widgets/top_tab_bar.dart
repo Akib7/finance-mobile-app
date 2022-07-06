@@ -1,6 +1,8 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
+import 'credit_card_page.dart';
+
 class TopTabBar extends StatefulWidget {
   const TopTabBar({Key? key}) : super(key: key);
 
@@ -18,12 +20,15 @@ class _TopTabBarState extends State<TopTabBar> {
           child: Column(
             children: <Widget>[
               ButtonsTabBar(
-                unselectedBackgroundColor: Colors.white,
-                unselectedLabelStyle: const TextStyle(color: Colors.black),
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                unselectedBackgroundColor:
+                    Theme.of(context).scaffoldBackgroundColor,
+                unselectedLabelStyle:
+                    const TextStyle(color: Colors.black, fontSize: 16),
                 labelStyle: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 22,
                 ),
                 tabs: const [
                   Tab(
@@ -41,7 +46,7 @@ class _TopTabBarState extends State<TopTabBar> {
                 child: TabBarView(
                   children: <Widget>[
                     Center(
-                      child: Icon(Icons.directions_car),
+                      child: CreditCardsPage(),
                     ),
                     Center(
                       child: Icon(Icons.directions_transit),
