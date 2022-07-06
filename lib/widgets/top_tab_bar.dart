@@ -19,28 +19,31 @@ class _TopTabBarState extends State<TopTabBar> {
           length: 3,
           child: Column(
             children: <Widget>[
-              ButtonsTabBar(
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                unselectedBackgroundColor:
-                    Theme.of(context).scaffoldBackgroundColor,
-                unselectedLabelStyle:
-                    const TextStyle(color: Colors.black, fontSize: 16),
-                labelStyle: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 25.0),
+                child: ButtonsTabBar(
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  unselectedBackgroundColor:
+                      Theme.of(context).scaffoldBackgroundColor,
+                  unselectedLabelStyle:
+                      const TextStyle(color: Colors.black, fontSize: 16),
+                  labelStyle: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
+                  tabs: const [
+                    Tab(
+                      text: "My Cards",
+                    ),
+                    Tab(
+                      text: "Deposits",
+                    ),
+                    Tab(
+                      text: "Transactions",
+                    ),
+                  ],
                 ),
-                tabs: const [
-                  Tab(
-                    text: "My Cards",
-                  ),
-                  Tab(
-                    text: "Deposits",
-                  ),
-                  Tab(
-                    text: "Transactions",
-                  ),
-                ],
               ),
               const Expanded(
                 child: TabBarView(

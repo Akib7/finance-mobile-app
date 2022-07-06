@@ -13,30 +13,30 @@ class CreditCardsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              _buildTitleSection(
-                  title: "Payment Details",
-                  subTitle: "How would you like to pay ?"),
-              Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 40.0),
-                    child: _buildCreditCard(
-                        color: login_color,
-                        cardExpiration: "08/2022",
-                        cardHolder: "HOUSSEM SELMI",
-                        cardNumber: "3546 7532 XXXX 9742",
-                        gradient1: login_color,
-                        gradient2: login_color),
-                  ),
-                  _buildCreditCard(
-                    color: signup_color,
-                    cardExpiration: "05/2024",
-                    cardHolder: "HOUSSEM SELMI",
-                    cardNumber: "9874 4785 XXXX 6548",
-                    gradient1: signup_color2,
-                    gradient2: Theme.of(context).scaffoldBackgroundColor,
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 28.0),
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 40.0),
+                      child: _buildCreditCard(
+                          color: login_color,
+                          cardExpiration: "08/2022",
+                          cardHolder: "HOUSSEM SELMI",
+                          cardNumber: "3546 7532 XXXX 9742",
+                          gradient1: login_color,
+                          gradient2: login_color),
+                    ),
+                    _buildCreditCard(
+                      color: signup_color,
+                      cardExpiration: "05/2024",
+                      cardHolder: "HOUSSEM SELMI",
+                      cardNumber: "9874 4785 XXXX 6548",
+                      gradient1: signup_color2,
+                      gradient2: Theme.of(context).scaffoldBackgroundColor,
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 15,
@@ -58,27 +58,6 @@ class CreditCardsPage extends StatelessWidget {
   }
 
   // Build the title section
-  Column _buildTitleSection({@required title, @required subTitle}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0, top: 16.0),
-          child: Text(
-            '$title',
-            style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0, bottom: 16.0),
-          child: Text(
-            '$subTitle',
-            style: const TextStyle(fontSize: 21, color: Colors.black45),
-          ),
-        )
-      ],
-    );
-  }
 
   // Build the credit card widget
   Card _buildCreditCard(
