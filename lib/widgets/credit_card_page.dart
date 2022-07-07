@@ -1,4 +1,5 @@
 import 'package:finance_mobile_app/widgets/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'small_containers.dart';
@@ -50,10 +51,25 @@ class CreditCardsPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SmallContainers(
+                    text: 'Shopping',
+                    ontap: () {},
+                    icon: CupertinoIcons.cart_fill,
+                  ),
+                  SmallContainers(
+                    text: 'Grocery',
+                    ontap: () {},
+                    icon: CupertinoIcons.cart_fill_badge_plus,
+                  ),
+                ],
+              ),
               SmallContainers(
-                text: 'Shopping',
+                text: 'Grocery',
                 ontap: () {},
-                icon: null,
+                icon: CupertinoIcons.cart_fill_badge_plus,
               ),
             ],
           ),
