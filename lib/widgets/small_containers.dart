@@ -1,16 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
 class SmallContainers extends StatelessWidget {
+  final IconData? icon;
   final Function()? ontap;
   final String text;
-  const SmallContainers({Key? key, required this.ontap, required this.text})
+  const SmallContainers(
+      {Key? key, required this.ontap, required this.text, required this.icon})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var now = DateTime.now();
     double width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: ontap,
@@ -47,6 +49,27 @@ class SmallContainers extends StatelessWidget {
                         onPressed: () {},
                         icon: const Icon(
                           Icons.menu,
+                          size: 12,
+                          color: login_color,
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '$now',
+                        style: const TextStyle(
+                          color: Colors.blueGrey,
+                          fontSize: 8,
+                          fontFamily: 'OpenSans',
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          icon,
                           size: 12,
                           color: login_color,
                         ),

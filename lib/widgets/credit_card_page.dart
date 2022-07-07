@@ -1,6 +1,8 @@
 import 'package:finance_mobile_app/widgets/constants.dart';
 import 'package:flutter/material.dart';
 
+import 'small_containers.dart';
+
 class CreditCardsPage extends StatelessWidget {
   const CreditCardsPage({Key? key}) : super(key: key);
 
@@ -47,7 +49,12 @@ class CreditCardsPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
+              SmallContainers(
+                text: 'Shopping',
+                ontap: () {},
+                icon: null,
+              ),
             ],
           ),
         ),
