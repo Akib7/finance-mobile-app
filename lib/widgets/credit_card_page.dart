@@ -14,7 +14,7 @@ class CreditCardsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 28.0),
+                padding: const EdgeInsets.symmetric(vertical: 12.0),
                 child: Stack(
                   children: [
                     Padding(
@@ -38,18 +38,16 @@ class CreditCardsPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              // _buildCreditCard(
-              //     color: signup_color,
-              //     cardExpiration: "05/2024",
-              //     cardHolder: "HOUSSEM SELMI",
-              //     cardNumber: "9874 4785 XXXX 6548"),
-              // _buildAddCardButton(
-              //   icon: const Icon(Icons.add),
-              //   color: const Color(0xFF081603),
-              // )
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0),
+                child: Text(
+                  'Payment Details',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
             ],
           ),
         ),

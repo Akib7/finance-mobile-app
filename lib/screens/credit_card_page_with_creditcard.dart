@@ -68,7 +68,6 @@ class CreditCardPageWithCreditCard extends StatelessWidget {
                   color: login_color,
                 ),
               ),
-              Text('Payment Details')
             ],
           ),
         ],
