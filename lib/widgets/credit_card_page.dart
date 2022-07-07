@@ -51,6 +51,9 @@ class CreditCardsPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 25,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -66,8 +69,11 @@ class CreditCardsPage extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 25,
+              ),
               SmallContainers(
-                text: 'Grocery',
+                text: 'Pharmacy',
                 ontap: () {},
                 icon: CupertinoIcons.cart_fill_badge_plus,
               ),

@@ -17,7 +17,7 @@ class SmallContainers extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Stack(
           children: [
             Container(
