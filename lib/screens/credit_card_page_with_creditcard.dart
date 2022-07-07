@@ -12,14 +12,14 @@ class CreditCardPageWithCreditCard extends StatelessWidget {
   }) {
     return Container(
       margin: const EdgeInsets.only(top: 24.0),
-      alignment: Alignment.center,
+      alignment: Alignment.topRight,
       child: FloatingActionButton(
         elevation: 2.0,
         onPressed: () {
           print("Add a credit card");
         },
         backgroundColor: color,
-        mini: false,
+        mini: true,
         child: icon,
       ),
     );
@@ -58,11 +58,15 @@ class CreditCardPageWithCreditCard extends StatelessWidget {
                   ),
                 ),
               ),
-              _buildAddCardButton(
-                icon: const Icon(
-                  Icons.add,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 35.0),
+                child: _buildAddCardButton(
+                  icon: const Icon(
+                    Icons.add,
+                  ),
+                  color: login_color,
                 ),
-                color: const Color(0xFF081603),
               )
             ],
           ),
