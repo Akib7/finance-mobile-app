@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
-class SmallContainers extends StatelessWidget {
+class SmallContainers extends StatefulWidget {
   final IconData? icon;
   final Function()? ontap;
   final String text;
@@ -15,11 +15,18 @@ class SmallContainers extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<SmallContainers> createState() => _SmallContainersState();
+}
+
+class _SmallContainersState extends State<SmallContainers> {
+  late Color color = signup_color;
+
+  @override
   Widget build(BuildContext context) {
     var now = DateTime.now();
     double width = MediaQuery.of(context).size.width;
     return GestureDetector(
-      onTap: ontap,
+      onTap: widget.ontap,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Stack(
@@ -28,7 +35,7 @@ class SmallContainers extends StatelessWidget {
               height: 125,
               width: width / 2.5,
               decoration: BoxDecoration(
-                color: text == 'Bills' ? login_color : signup_color,
+                color: color,
                 borderRadius: BorderRadius.circular(40),
               ),
               child: Padding(
@@ -40,21 +47,28 @@ class SmallContainers extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          text,
+                          widget.text,
                           style: TextStyle(
-                            color:
-                                text == 'Bills' ? Colors.white : Colors.black,
+                            color: widget.text == 'Bills'
+                                ? Colors.white
+                                : Colors.black,
                             fontSize: 18,
                             fontFamily: 'OpenSans',
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              color = login_color;
+                            });
+                          },
                           icon: Icon(
                             Icons.menu,
                             size: 28,
-                            color: text == 'Bills' ? Colors.white : login_color,
+                            color: widget.text == 'Bills'
+                                ? Colors.white
+                                : login_color,
                           ),
                         )
                       ],
@@ -65,7 +79,7 @@ class SmallContainers extends StatelessWidget {
                         Text(
                           'date',
                           style: TextStyle(
-                            color: text == 'Bills'
+                            color: widget.text == 'Bills'
                                 ? Colors.white
                                 : Colors.blueGrey,
                             fontSize: 13,
@@ -75,9 +89,11 @@ class SmallContainers extends StatelessWidget {
                         IconButton(
                           onPressed: () {},
                           icon: Icon(
-                            icon,
+                            widget.icon,
                             size: 32,
-                            color: text == 'Bills' ? Colors.white : login_color,
+                            color: widget.text == 'Bills'
+                                ? Colors.white
+                                : login_color,
                           ),
                         )
                       ],
