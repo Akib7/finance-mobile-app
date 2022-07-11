@@ -6,9 +6,13 @@ class SmallContainers extends StatelessWidget {
   final IconData? icon;
   final Function()? ontap;
   final String text;
-  const SmallContainers(
-      {Key? key, required this.ontap, required this.text, required this.icon})
-      : super(key: key);
+
+  SmallContainers({
+    Key? key,
+    required this.ontap,
+    required this.text,
+    required this.icon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class SmallContainers extends StatelessWidget {
               height: 125,
               width: width / 2.5,
               decoration: BoxDecoration(
-                color: signup_color,
+                color: text == 'Bills' ? login_color : signup_color,
                 borderRadius: BorderRadius.circular(40),
               ),
               child: Padding(
@@ -37,8 +41,9 @@ class SmallContainers extends StatelessWidget {
                       children: [
                         Text(
                           text,
-                          style: const TextStyle(
-                            color: Colors.black,
+                          style: TextStyle(
+                            color:
+                                text == 'Bills' ? Colors.white : Colors.black,
                             fontSize: 18,
                             fontFamily: 'OpenSans',
                             fontWeight: FontWeight.bold,
@@ -46,10 +51,10 @@ class SmallContainers extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.menu,
                             size: 28,
-                            color: login_color,
+                            color: text == 'Bills' ? Colors.white : login_color,
                           ),
                         )
                       ],
@@ -57,10 +62,12 @@ class SmallContainers extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'date',
                           style: TextStyle(
-                            color: Colors.blueGrey,
+                            color: text == 'Bills'
+                                ? Colors.white
+                                : Colors.blueGrey,
                             fontSize: 13,
                             fontFamily: 'OpenSans',
                           ),
@@ -70,7 +77,7 @@ class SmallContainers extends StatelessWidget {
                           icon: Icon(
                             icon,
                             size: 32,
-                            color: login_color,
+                            color: text == 'Bills' ? Colors.white : login_color,
                           ),
                         )
                       ],

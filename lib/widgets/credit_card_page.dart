@@ -9,6 +9,8 @@ class CreditCardsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return ListView(
       children: [
         Container(
@@ -72,10 +74,20 @@ class CreditCardsPage extends StatelessWidget {
               const SizedBox(
                 height: 25,
               ),
-              SmallContainers(
-                text: 'Pharmacy',
-                ontap: () {},
-                icon: CupertinoIcons.cart_fill_badge_plus,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SmallContainers(
+                    text: 'Pharmacy',
+                    ontap: () {},
+                    icon: CupertinoIcons.cart_fill_badge_plus,
+                  ),
+                  SmallContainers(
+                    text: 'Bills',
+                    ontap: () {},
+                    icon: CupertinoIcons.cart_fill_badge_plus,
+                  ),
+                ],
               ),
             ],
           ),
