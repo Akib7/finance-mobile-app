@@ -15,10 +15,11 @@ class Transaction extends StatelessWidget {
                 onPressed: () {},
                 child: const Text('See all Transactions'),
                 style: ElevatedButton.styleFrom(
-                    primary: login_color,
-                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                    textStyle:
-                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                  primary: login_color,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  textStyle: const TextStyle(fontSize: 18),
+                ),
               ),
             ),
           ],
