@@ -5,6 +5,19 @@ class Transaction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return ListView(
+      children: [
+        Column(
+          children: [
+            Container(
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('See all Transactions'),
+              ),
+            ),
+          ],
+        )
+      ],
+    );
   }
 }

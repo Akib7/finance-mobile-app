@@ -1,6 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/transaction.dart';
 import 'credit_card_page.dart';
 
 class TopTabBar extends StatefulWidget {
@@ -55,7 +56,7 @@ class _TopTabBarState extends State<TopTabBar> {
                       child: Icon(Icons.directions_transit),
                     ),
                     Center(
-                      child: Icon(Icons.directions_bike),
+                      child: Transaction(),
                     ),
                   ],
                 ),
