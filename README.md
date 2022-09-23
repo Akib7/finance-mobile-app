@@ -8,6 +8,7 @@ MVC (Model-View-Controller) is a pattern in software design commonly used to imp
 
 <img src="https://user-images.githubusercontent.com/75217894/191933593-6ac54d2a-e3f0-48da-a9dc-6aa3e37c8476.png" width="300" height="450" />
 
-<img src="https://user-images.githubusercontent.com/75217894/191933631-0c542292-ee94-48aa-945a-0df2b2243c5a" width="300" height="450" />
+<img src="https://user-images.githubusercontent.com/75217894/191933997-d0a7e1e3-4181-4a5f-ad77-8b973b282665.png" width="300" height="450" />
 
-<img src="https://user-images.githubusercontent.com/75217894/191933662-5925c15a-57ec-420e-8c2e-a1bbfd1f1ead" width="300" height="450" />
+<img src="https://user-images.githubusercontent.com/75217894/191934011-3488cb4c-c0b4-430f-859c-5d5376b8625d.png" width="300" height="450" />
+
